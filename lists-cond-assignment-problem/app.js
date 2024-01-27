@@ -6,6 +6,11 @@ const app = Vue.createApp({
             showList: true
         };
     },
+    computed: {
+        buttonCaption() {
+            return this.showList ? 'Hide List' : 'Show List';
+        }
+    },
     methods: {
         addTask() {
             this.tasks.push(this.newTask);
@@ -13,9 +18,9 @@ const app = Vue.createApp({
         toggleList() {
             this.showList = !this.showList;
         },
-        updateButtonCaption() {
-            return this.showList ? 'Hide List' : 'Show List';
-        }
+        // updateButtonCaption() {
+        //     return this.showList ? 'Hide List' : 'Show List';
+        // }
     },
 })
 app.mount('#assignment')
